@@ -6,7 +6,7 @@
     <title>MangAI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="fade-in">
     <!-- Decorative particles -->
 <div class="particles">
     <!-- We generated 30 particles -->
@@ -33,12 +33,69 @@
     <div class="container">
         <h1>MangAI</h1>
         <p>Explore the future of artificial intelligence.</p>
-        <a href="#" class="cta-button">TRY NOW</a>
+        <a href="#" class="cta-button">CA: Coming soon...</a>
     </div>
+
+    <div class="buttons">
+        <a href="https://www.example1.com" target="_blank" class="big-button">
+            Whitepaper <span class="arrow">➔</span>
+        </a>
+        <a href="https://www.example2.com" target="_blank" class="big-button">
+            Join Discord <span class="arrow">➔</span>
+        </a>
+        <a href="https://www.example3.com" target="_blank" class="big-button">
+            GitBook <span class="arrow">➔</span>
+        </a>
+    </div>
+    <section class="faq">
+        <h2>FAQ</h2>
+        <div class="faq-item">
+            <div class="faq-question">What is MangAI?</div>
+            <div class="faq-answer">MangAI is a tool that leverages artificial intelligence to generate manga, comics, and graphic novels.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How does MangAI work?</div>
+            <div class="faq-answer">MangAI provides you with the ability to turn your ideas and sketches into complete works, making the creative process easier and accessible for artists of all levels.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Is MangAI safe?</div>
+            <div class="faq-answer">Yes, MangAI is safe to use. The platform respects the privacy and security of its users, ensuring a reliable experience.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">How can I participate in MangAI?</div>
+            <div class="faq-answer">You can participate by joining our Discord, exploring our GitBook, or reading our Whitepaper for more details.</div>
+        </div>
+    </section>
+    
+    
 
     <!-- Footer -->
     <footer>
-        © 2025 MangAI | <a href="#">Privacy Policy</a> | <a href="#">Terms</a>
+        <div class="social-links">
+            <a href="https://twitter.com/tuusuario" target="_blank">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="X">
+            </a>
+            <a href="https://github.com/tuusuario" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png" alt="GitHub">
+            </a>
+        </div>
+        <p>© 2025 MangAI</p>
     </footer>
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+    
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            const answer = item.querySelector('.faq-answer');
+    
+            item.addEventListener('mouseenter', () => {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            });
+    
+            item.addEventListener('mouseleave', () => {
+                answer.style.maxHeight = '0';
+            });
+        });
+    </script>
 </body>
 </html>

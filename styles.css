@@ -1,3 +1,20 @@
+/* Animación de entrada */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 /* Basic reset */
 * {
     margin: 0;
@@ -5,20 +22,26 @@
     box-sizing: border-box;
 }
 
+
 /* General */
 body {
-    font-family: 'Arial', sans-serif;
+    min-height: 100vh; /* La altura mínima del cuerpo es la altura completa de la ventana */
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
-    text-align: center;
     margin: 0;
-    padding: 0 10px; /* Espaciado lateral para móviles */
-    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Fondo degradado */
+}
+
+.container {
+    display: flex; /* Configura flexbox */
+    flex-direction: column; /* Coloca los elementos uno debajo del otro */
+    justify-content: center; /* Centra verticalmente */
+    align-items: center; /* Centra horizontalmente */
+    flex: 1; /* Ocupa todo el espacio disponible */
+    text-align: center; /* Centra el texto */
+    padding: 20px; /* Espaciado interno */
 }
 
 /* Title */
@@ -54,24 +77,38 @@ p {
     transform: translateY(-2px);
 }
 
-/* Footer */
+/* Estilo para el footer */
 footer {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    width: 100%;
+    position: relative; /* Permite que el footer esté al final del contenido */
+    margin-top: 50px; /* Espacio entre el FAQ y el footer */
     text-align: center;
     font-size: 0.8rem;
-    color: #fff;
+    color: white; /* Letras blancas */
+    background-color: #0f2027; /* Fondo oscuro */
+    padding: 20px 10px; /* Espaciado interno */
+    border-top: 1px solid white; /* Línea separadora */
 }
 
-footer a {
-    color: #ffffff;
-    text-decoration: none;
+footer p {
+    margin: 10px 0 0; /* Espacio entre las líneas de texto */
 }
 
-footer a:hover {
-    text-decoration: underline;
+footer .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre los logos */
+    margin-bottom: 10px; /* Espacio debajo de los logos */
+}
+
+footer .social-links img {
+    width: 30px; /* Tamaño de los logos */
+    height: 30px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer .social-links img:hover {
+    transform: scale(1.1); /* Agranda los logos en hover */
+    opacity: 0.8; /* Suaviza la opacidad al pasar el ratón */
 }
 
 /* Decorative particles */
@@ -110,6 +147,35 @@ footer a:hover {
         opacity: 0;
     }
 }
+/* Estilo para los logos de redes sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre los logos */
+    margin-top: 30px;
+    margin-bottom: 20px; /* Espacio antes del footer */
+}
+
+.social-links a {
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Transiciones suaves */
+}
+
+.social-links img {
+    width: 30px; /* Tamaño del logo */
+    height: 30px;
+    filter: invert(100%); /* Fuerza a blanco puro */
+    transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease; /* Efectos de hover */
+}
+
+.social-links img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño en hover */
+    opacity: 0.8; /* Hace el logo un poco más transparente al pasar el mouse */
+    filter: none; /* Opción para quitar el efecto invertido si usas un logo en blanco puro */
+}
+
+
+
 
 /* Mobile Settings */
 @media (max-width: 768px) {
@@ -163,4 +229,98 @@ footer a:hover {
     footer {
         font-size: 0.6rem;
     }
+}
+/* Animación de entrada global */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Botones con flecha */
+.big-button {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.big-button:hover {
+    transform: scale(1.05);
+}
+
+.big-button .arrow {
+    margin-left: 10px; /* Espacio entre el texto y la flecha */
+    transition: transform 0.3s ease;
+}
+
+.big-button:hover .arrow {
+    transform: translateX(5px); /* Mueve la flecha al hacer hover */
+}
+/* FAQ */
+.faq {
+    margin-top: 50px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: border-color 0.3s ease;
+}
+
+.faq-question {
+    padding: 15px 20px;
+    background-color:transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente en hover */
+    color: #ffffff; /* Color azul claro en hover */
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    color: white;
+    font-size: 1rem;
+    background-color: transparent;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaciado entre los botones */
+    margin-top: 40px; /* Aumenta el espacio entre "Coming soon" y los botones */
 }
