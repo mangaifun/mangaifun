@@ -25,6 +25,8 @@
 
 /* General */
 body {
+    margin: 0;
+    overflow: hidden;/* Evita el desbordamiento horizontal */
     min-height: 100vh; /* La altura mínima del cuerpo es la altura completa de la ventana */
     display: flex;
     flex-direction: column;
@@ -94,6 +96,7 @@ footer p {
 }
 
 footer .social-links {
+    padding: 10px 0;
     display: flex;
     justify-content: center;
     gap: 20px; /* Espaciado entre los logos */
@@ -101,8 +104,8 @@ footer .social-links {
 }
 
 footer .social-links img {
-    width: 30px; /* Tamaño de los logos */
-    height: 30px;
+    width: 40px; /* Tamaño de los logos */
+    height: 40px;
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
