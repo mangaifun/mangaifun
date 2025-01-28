@@ -1,3 +1,10 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* General */
 body {
     font-family: 'Arial', sans-serif;
@@ -6,129 +13,56 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Fondo futurista */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: #fff;
     text-align: center;
     margin: 0;
-    overflow: hidden; /* Para manejar partículas */
+    padding: 0 10px; /* Espaciado lateral para móviles */
+    overflow-x: hidden;
 }
 
-/* Animaciones */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes pulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-@keyframes floating {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Contenedor principal */
-.container {
-    animation: fadeIn 2s ease-in-out; /* Entrada suave */
-}
-
-/* Estilo del título */
+/* Title */
 h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 10px;
-    color: #ffffff;
-    animation: fadeIn 2s ease-in-out, floating 4s infinite ease-in-out; /* Flotación */
+    color: #fff;
+    animation: fadeIn 2s ease-in-out, floating 4s infinite ease-in-out;
 }
 
-/* Subtítulo */
+/* Caption */
 p {
     font-size: 1.2rem;
     margin-bottom: 20px;
-    color: #ffffff;
-    animation: fadeIn 2.5s ease-in-out;
+    color: #fff;
 }
 
-/* Botón minimalista */
+/* Button */
 .cta-button {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 12px 24px;
     font-size: 1rem;
     color: #fff;
     background: transparent;
-    border: 2px solid #ffffff; /* Borde minimalista */
+    border: 2px solid #ffffff;
     border-radius: 30px;
     text-decoration: none;
     transition: all 0.3s ease-in-out;
 }
 
 .cta-button:hover {
-    background: #48cae4; /* Cambia el fondo en hover */
-    color: #000; /* Cambia el texto en hover */
-    transform: translateY(-2px); /* Efecto sutil de elevación */
+    color: #ffffff;
+    transform: translateY(-2px);
 }
 
-
-.cta-button:hover {
-    background: linear-gradient(90deg, #ffffff, #ffffff);
-    transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* Partículas decorativas */
-.particles {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.particle {
-    position: absolute;
-    background: rgba(255, 255, 255, 0.2);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    animation: move 10s linear infinite;
-}
-
-@keyframes move {
-    0% {
-        transform: translateY(0) translateX(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh) translateX(calc(100vw - 50px));
-        opacity: 0;
-    }
-}
-/* Footer en la parte inferior */
+/* Footer */
 footer {
     position: absolute;
-    bottom: 20px; /* Espacio desde el borde inferior */
+    bottom: 20px;
     left: 0;
     width: 100%;
     text-align: center;
-    font-size: 0.9rem;
-    color: #ffffff;
+    font-size: 0.8rem;
+    color: #fff;
 }
 
 footer a {
@@ -140,15 +74,93 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Contenedor principal: espacio para el footer */
-body {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    overflow-x: hidden;
+/* Decorative particles */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Particles do not block the interaction */
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.25); /* Semi transparent particles */
+    width: 15px; /* Larger size */
+    height: 15px;
+    border-radius: 50%;
+    animation: appear 3s linear infinite; /* Faster animation */
+    animation-delay: calc(-1s * var(--delay)); /* Random delay for each particle */
+}
+
+/* Random spawn animation */
+@keyframes appear {
+    0% {
+        transform: translate(calc(var(--x) * 1vw), calc(var(--y) * 1vh)) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(calc(var(--x) * 1vw), calc(var(--y) * 1vh)) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(calc(var(--x) * 1vw), calc(var(--y) * 1vh)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* Mobile Settings */
+@media (max-width: 768px) {
+    .particle {
+        width: 10px; /* Smaller size on mobile */
+        height: 10px;
+        animation: appear 2.5s linear infinite; /* Slightly faster animation */
+    }
+}
+
+
+/* Media queries for small screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    footer {
+        font-size: 0.7rem;
+    }
+
+    .particle {
+        width: 6px; /* Smaller size for mobile */
+        height: 6px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+
+    footer {
+        font-size: 0.6rem;
+    }
 }
