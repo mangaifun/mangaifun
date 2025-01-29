@@ -1,101 +1,51 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MangAI</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="fade-in">
-    <!-- Decorative particles -->
-<div class="particles">
-    <!-- We generated 30 particles -->
-    <div class="particle" style="--x: 10; --y: 20; --delay: 0;"></div>
-    <div class="particle" style="--x: 30; --y: 40; --delay: 1;"></div>
-    <div class="particle" style="--x: 50; --y: 10; --delay: 2;"></div>
-    <div class="particle" style="--x: 70; --y: 60; --delay: 3;"></div>
-    <div class="particle" style="--x: 90; --y: 80; --delay: 4;"></div>
-    <div class="particle" style="--x: 15; --y: 45; --delay: 0.5;"></div>
-    <div class="particle" style="--x: 35; --y: 25; --delay: 1.5;"></div>
-    <div class="particle" style="--x: 85; --y: 15; --delay: 2.5;"></div>
-    <div class="particle" style="--x: 60; --y: 50; --delay: 3.5;"></div>
-    <div class="particle" style="--x: 40; --y: 70; --delay: 4.5;"></div>
-    <!-- We add more particles for higher density -->
-    <div class="particle" style="--x: 20; --y: 30; --delay: 2;"></div>
-    <div class="particle" style="--x: 70; --y: 20; --delay: 3;"></div>
-    <div class="particle" style="--x: 90; --y: 40; --delay: 1;"></div>
-    <div class="particle" style="--x: 50; --y: 70; --delay: 4;"></div>
-    <div class="particle" style="--x: 10; --y: 90; --delay: 0;"></div>
-</div>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="assets/11904085_3840_2160_24fps.mp4" type="video/mp4">
+        Tu navegador no soporta videos en HTML5.
+    </video>    
 
+    <!-- Navbar -->
+    <header>
+        <div class="logo">MANGAI</div>
+        <nav>
+            <ul>
+                <li><a href="https://www.mangai.fun/">Home</a></li>
+                <li><a href="https://mangai.gitbook.io/mangai.fun">Roadmap</a></li>
+                <li><a href="https://github.com/mangaifun/mangaifun">Github</a></li>
+                <li><a href="">FAQ</a></li>
+            </ul>
+        </nav>
+        <a href="#" class="try-now-button nav-btn">TRY NOW</a>
+    </header>
 
-    <!-- Main content -->
-    <div class="container">
-        <h1>MangAI</h1>
-        <p>Explore the future of artificial intelligence.</p>
-        <a href="#" class="cta-button">CA: Coming soon...</a>
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección izquierda -->
+        <section class="left-section">
+
+            <h1 class="title">MANGAI</h1>
+            <a href="#" class="cta-button">The future of AI in Crypto</a>
+
+            <a href="#" class="try-now-button">TRY NOW</a>
+
+        </section>
+    </main>
+    <!-- Sidebar de Redes Sociales -->
+    <div class="social-links">
+        <a href="https://x.com/mangaisol"><img src="assets/xlogo.png" alt="X"></a>
+        <a href="https://github.com/mangaifun/mangaifun"><img src="assets/github logo.png" alt="GitHub"></a>
+        <a href="https://mangai.gitbook.io/mangai.fun"><img src="assets/gitbooklogo.png" alt="Gitbook"></a>
+        <a href="#"><img src="assets/discordlogo.png" alt="Discord"></a>
     </div>
 
-    <div class="buttons">
-        <a href="https://www.example1.com" target="_blank" class="big-button">
-            Whitepaper <span class="arrow">➔</span>
-        </a>
-        <a href="https://www.example2.com" target="_blank" class="big-button">
-            Join Discord <span class="arrow">➔</span>
-        </a>
-        <a href="https://www.example3.com" target="_blank" class="big-button">
-            GitBook <span class="arrow">➔</span>
-        </a>
-    </div>
-    <section class="faq">
-        <h2>FAQ</h2>
-        <div class="faq-item">
-            <div class="faq-question">What is MangAI?</div>
-            <div class="faq-answer">MangAI is a tool that leverages artificial intelligence to generate manga, comics, and graphic novels.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">How does MangAI work?</div>
-            <div class="faq-answer">MangAI provides you with the ability to turn your ideas and sketches into complete works, making the creative process easier and accessible for artists of all levels.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Is MangAI safe?</div>
-            <div class="faq-answer">Yes, MangAI is safe to use. The platform respects the privacy and security of its users, ensuring a reliable experience.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">How can I participate in MangAI?</div>
-            <div class="faq-answer">You can participate by joining our Discord, exploring our GitBook, or reading our Whitepaper for more details.</div>
-        </div>
-    </section>
-    
-    
 
-    <!-- Footer -->
-    <footer>
-        <div class="social-links">
-            <a href="https://twitter.com/tuusuario" target="_blank">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/twitter/twitter-original.svg" alt="X">
-            </a>
-            <a href="https://github.com/tuusuario" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968866.png" alt="GitHub">
-            </a>
-        </div>
-        <p>© 2025 MangAI</p>
-    </footer>
-    <script>
-        const faqItems = document.querySelectorAll('.faq-item');
-    
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            const answer = item.querySelector('.faq-answer');
-    
-            item.addEventListener('mouseenter', () => {
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            });
-    
-            item.addEventListener('mouseleave', () => {
-                answer.style.maxHeight = '0';
-            });
-        });
-    </script>
 </body>
 </html>
